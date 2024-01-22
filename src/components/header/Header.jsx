@@ -10,7 +10,7 @@ const Header = styled.header`
 const HeaderSection = () => {
   return (
     <Header>
-      <h1>Studies App</h1>
+      <h1>Studies App (공사중🚧)</h1>
       <p>Recording my studies</p>
     </Header>
   );
