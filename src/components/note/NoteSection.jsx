@@ -2,7 +2,7 @@ import styled from "styled-components";
 import NoteList from "./NoteList";
 
 const Section = styled.section`
-  margin-top: 20px;
+  margin-top: 30px;
 `;
 
 const NoteSection = () => {

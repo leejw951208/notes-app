@@ -8,11 +8,19 @@ const StyledButton = styled.button`
   text-align: center;
   padding: 10px;
   font-size: 15px;
+  cursor: pointer;
+  &:hover {
+    background-color: ${(props) => props.$hoverBackgroundColor};
+  }
 `;
 
-const Button = ({ backgroundColor, color, name }) => {
+const Button = ({ backgroundColor, hoverBackgroundColor, color, name }) => {
   return (
-    <StyledButton $backgroundColor={backgroundColor} $color={color}>
+    <StyledButton
+      $backgroundColor={backgroundColor}
+      $hoverBackgroundColor={hoverBackgroundColor}
+      $color={color}
+    >
       {name}
     </StyledButton>
   );

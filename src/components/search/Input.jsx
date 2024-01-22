@@ -7,6 +7,9 @@ const StyledInput = styled.input`
   flex: 2;
   padding: 0 10px;
   font-size: 16px;
+  &:focus {
+    background-color: #fff;
+  }
 `;
 
 const Input = () => {

@@ -6,6 +6,7 @@ const StyledSelectbox = styled.select`
   border-radius: 10px;
   padding: 0 10px;
   font-size: 16px;
+  cursor: pointer;
 `;
 
 const Selectbox = ({ children }) => {

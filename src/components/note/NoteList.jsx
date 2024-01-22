@@ -1,11 +1,18 @@
 import styled from "styled-components";
 
 const Article = styled.article`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   border: none;
   border-radius: 1rem;
   background-color: #fff;
-  padding: 15px;
-  margin-top: 10px;
+  padding: 15px 20px;
+  margin-top: 15px;
+  cursor: pointer;
+  &:hover {
+    background-color: #d5d5d5;
+  }
 `;
 
 const NoteList = () => {

@@ -7,7 +7,7 @@ const Section = styled.section`
   justify-content: space-between;
   height: 50px;
   gap: 5px;
-  margin-top: 20px;
+  margin-top: 30px;
 `;
 
 const SearchSection = () => {
