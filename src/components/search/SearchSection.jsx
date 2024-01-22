@@ -5,7 +5,7 @@ import Selectbox from "./Selectbox";
 const Section = styled.section`
   display: flex;
   justify-content: space-between;
-  height: 35px;
+  height: 50px;
   gap: 5px;
   margin-top: 20px;
 `;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Section = styled.section`
+const Header = styled.header`
   margin-top: 50px;
   > h1 {
     font-size: 35px;
@@ -9,10 +9,10 @@ const Section = styled.section`
 
 const HeaderSection = () => {
   return (
-    <Section>
+    <Header>
       <h1>Notes App</h1>
       <p>Take notes and never forget.</p>
-    </Section>
+    </Header>
   );
 };
 
