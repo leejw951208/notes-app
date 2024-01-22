@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SearchSection from "./components/Search/SearchSection";
+import SearchSection from "./components/search/SearchSection";
 import NoteSection from "./components/note/NoteSection";
 import ButtonSection from "./components/button/ButtonSection";
 import HeaderSection from "./components/header/Header";
