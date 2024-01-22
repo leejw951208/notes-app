@@ -5,11 +5,13 @@ import ButtonSection from "./components/button/ButtonSection";
 import HeaderSection from "./components/header/Header";
 
 const Template = styled.div`
-  width: 1280px;
+  display: flex;
+  flex-direction: column;
   border: 1px solid #f0f0f0;
   border-radius: 1rem;
   background-color: #f0f0f0;
   padding: 20px;
+  width: 1280px;
 `;
 
 function App() {
