@@ -10,8 +10,8 @@ const Header = styled.header`
 const HeaderSection = () => {
   return (
     <Header>
-      <h1>Notes App</h1>
-      <p>Take notes and never forget.</p>
+      <h1>Studies App</h1>
+      <p>Recording my studies</p>
     </Header>
   );
 };
