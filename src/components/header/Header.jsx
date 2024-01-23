@@ -1,19 +1,19 @@
 import styled from "styled-components";
 
-const Header = styled.header`
+const StyledHeader = styled.header`
   margin-top: 50px;
   > h1 {
     font-size: 35px;
   }
 `;
 
-const HeaderSection = () => {
+const Header = () => {
   return (
-    <Header>
+    <StyledHeader>
       <h1>Studies App (공사중... 🚧)</h1>
       <p>Recording my studies</p>
-    </Header>
+    </StyledHeader>
   );
 };
 
-export default HeaderSection;
+export default Header;

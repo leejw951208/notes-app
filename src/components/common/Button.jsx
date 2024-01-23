@@ -4,7 +4,7 @@ import { boardActions } from "../../store/board-slice";
 
 const StyledButton = styled.button`
   color: ${(props) => props.$color};
-  background-color: ${(props) => props.$backgroundColor};
+  background-color: ${(props) => props.$backGroundColor};
   border: none;
   border-radius: 10px;
   text-align: center;
@@ -12,21 +12,21 @@ const StyledButton = styled.button`
   font-size: 15px;
   cursor: pointer;
   &:hover {
-    background-color: ${(props) => props.$hoverBackgroundColor};
+    background-color: ${(props) => props.$hoverBackGroundColor};
   }
 `;
 
 const Button = ({
-  backgroundColor,
-  hoverBackgroundColor,
+  backGroundColor,
+  hoverBackGroundColor,
   color,
   name,
   onClick,
 }) => {
   return (
     <StyledButton
-      $backgroundColor={backgroundColor}
-      $hoverBackgroundColor={hoverBackgroundColor}
+      $backGroundColor={backGroundColor}
+      $hoverBackGroundColor={hoverBackGroundColor}
       $color={color}
       onClick={onClick}
     >

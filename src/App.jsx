@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import HeaderSection from "./components/header/Header";
-import MainSection from "./components/MainSection";
+import Header from "./components/header/Header";
+import Main from "./components/main/Main";
 
 const Template = styled.div`
   display: flex;
@@ -16,8 +16,8 @@ const Template = styled.div`
 function App() {
   return (
     <Template>
-      <HeaderSection />
-      <MainSection />
+      <Header />
+      <Main />
     </Template>
   );
 }

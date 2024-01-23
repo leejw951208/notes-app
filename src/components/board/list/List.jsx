@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import Board from "./Board";
-import Button from "../button/Button";
-import SearchSection from "../search/SearchSection";
+import Item from "./Item";
+import Button from "../../common/Button";
 import { useDispatch } from "react-redux";
-import { boardActions } from "../../store/board-slice";
+import { boardActions } from "../../../store/board-slice";
+import SearchSection from "../../search/Search";
 
-const BoardSection = styled.section`
+const ItemSection = styled.section`
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -18,7 +18,7 @@ const ButtonSection = styled.section`
   justify-content: flex-end;
 `;
 
-const BoardListSection = () => {
+const List = () => {
   const dispatch = useDispatch();
 
   const handleAddBoard = () => {
@@ -28,16 +28,16 @@ const BoardListSection = () => {
   return (
     <>
       <SearchSection />
-      <BoardSection>
-        <Board />
-        <Board />
-        <Board />
-        <Board />
-      </BoardSection>
+      <ItemSection>
+        <Item />
+        <Item />
+        <Item />
+        <Item />
+      </ItemSection>
       <ButtonSection>
         <Button
-          backgroundColor={"#2C61F0"}
-          hoverBackgroundColor={"#1448D3"}
+          backGroundColor={"#2C61F0"}
+          hoverBackGroundColor={"#1448D3"}
           color={"white"}
           name={"New Board"}
           onClick={handleAddBoard}
@@ -47,4 +47,4 @@ const BoardListSection = () => {
   );
 };
 
-export default BoardListSection;
+export default List;
