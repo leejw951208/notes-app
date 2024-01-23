@@ -5,9 +5,7 @@ import Selectbox from "./Selectbox";
 const Section = styled.section`
   display: flex;
   justify-content: space-between;
-  height: 50px;
-  gap: 5px;
-  margin-top: 30px;
+  gap: 10px;
 `;
 
 const SearchSection = () => {

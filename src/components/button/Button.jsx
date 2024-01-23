@@ -1,4 +1,6 @@
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { boardActions } from "../../store/board-slice";
 
 const StyledButton = styled.button`
   color: ${(props) => props.$color};
@@ -14,12 +16,19 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({ backgroundColor, hoverBackgroundColor, color, name }) => {
+const Button = ({
+  backgroundColor,
+  hoverBackgroundColor,
+  color,
+  name,
+  onClick,
+}) => {
   return (
     <StyledButton
       $backgroundColor={backgroundColor}
       $hoverBackgroundColor={hoverBackgroundColor}
       $color={color}
+      onClick={onClick}
     >
       {name}
     </StyledButton>

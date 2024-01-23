@@ -8,14 +8,13 @@ const Article = styled.article`
   border-radius: 1rem;
   background-color: #fff;
   padding: 15px 20px;
-  margin-top: 15px;
   cursor: pointer;
   &:hover {
     background-color: #d5d5d5;
   }
 `;
 
-const NoteList = () => {
+const Board = () => {
   return (
     <Article>
       <h2>title</h2>
@@ -24,4 +23,4 @@ const NoteList = () => {
   );
 };
 
-export default NoteList;
+export default Board;

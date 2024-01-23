@@ -1,28 +1,23 @@
 import styled from "styled-components";
-import SearchSection from "./components/search/SearchSection";
-import NoteSection from "./components/note/NoteSection";
-import ButtonSection from "./components/button/ButtonSection";
 import HeaderSection from "./components/header/Header";
+import MainSection from "./components/MainSection";
 
 const Template = styled.div`
   display: flex;
   flex-direction: column;
-  border: 1px solid #f0f0f0;
+  border: 1px solid #e7e7e7;
   border-radius: 1rem;
-  background-color: #f0f0f0;
+  background-color: #e5e5e5;
   padding: 20px;
   width: 1280px;
+  gap: 30px;
 `;
 
 function App() {
   return (
     <Template>
       <HeaderSection />
-      <main>
-        <SearchSection />
-        <NoteSection />
-        <ButtonSection />
-      </main>
+      <MainSection />
     </Template>
   );
 }
