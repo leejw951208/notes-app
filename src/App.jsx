@@ -9,7 +9,8 @@ const Template = styled.div`
   border-radius: 1rem;
   background-color: #e5e5e5;
   padding: 20px;
-  width: 1280px;
+  max-width: 768px;
+  width: 100%;
   gap: 30px;
 `;
 

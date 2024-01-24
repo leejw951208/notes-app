@@ -4,6 +4,7 @@ const StyledHeader = styled.header`
   margin-top: 50px;
   > h1 {
     font-size: 35px;
+    word-break: keep-all;
   }
 `;
 
