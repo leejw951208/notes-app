@@ -14,6 +14,10 @@ const StyledButton = styled.button`
   &:hover {
     background-color: ${(props) => props.$hoverBackGroundColor};
   }
+  &:disabled {
+    background-color: #bbbbbb;
+    color: #8e8e8e;
+  }
 `;
 
 const Button = ({
@@ -22,6 +26,7 @@ const Button = ({
   color,
   name,
   onClick,
+  isActive = true,
 }) => {
   return (
     <StyledButton
@@ -29,6 +34,7 @@ const Button = ({
       $hoverBackGroundColor={hoverBackGroundColor}
       $color={color}
       onClick={onClick}
+      disabled={!isActive}
     >
       {name}
     </StyledButton>

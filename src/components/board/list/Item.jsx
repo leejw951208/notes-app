@@ -14,11 +14,11 @@ const Article = styled.article`
   }
 `;
 
-const Board = () => {
+const Board = ({ title, content, onClick }) => {
   return (
-    <Article>
-      <h2>title</h2>
-      <p>description</p>
+    <Article onClick={onClick}>
+      <h2>{title}</h2>
+      <p>{content}</p>
     </Article>
   );
 };

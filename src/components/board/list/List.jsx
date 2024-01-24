@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Item from "./Item";
 import Button from "../../common/Button";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { boardActions } from "../../../store/board-slice";
 import SearchSection from "../../search/Search";
 
@@ -11,6 +11,13 @@ const ItemSection = styled.section`
   gap: 15px;
   height: 320px;
   overflow-y: overlay;
+  > p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #8e8e8e;
+  }
 `;
 
 const ButtonSection = styled.section`
@@ -20,19 +27,34 @@ const ButtonSection = styled.section`
 
 const List = () => {
   const dispatch = useDispatch();
+  const { notes } = useSelector((state) => state.board);
 
   const handleAddBoard = () => {
-    dispatch(boardActions.setEdit(true));
+    dispatch(boardActions.setEditId(""));
+    dispatch(boardActions.setWrite(true));
   };
+
+  const handleItemClick = (id) => {
+    dispatch(boardActions.setEditId(id));
+    dispatch(boardActions.setWrite(true));
+  };
+
+  console.log(notes);
 
   return (
     <>
       <SearchSection />
       <ItemSection>
-        <Item />
-        <Item />
-        <Item />
-        <Item />
+        {notes.length === 0 && <p>No result</p>}
+        {notes &&
+          notes.map((note) => (
+            <Item
+              key={note.id}
+              title={note.title}
+              content={note.content}
+              onClick={() => handleItemClick(note.id)}
+            />
+          ))}
       </ItemSection>
       <ButtonSection>
         <Button

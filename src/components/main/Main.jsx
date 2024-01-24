@@ -10,8 +10,8 @@ const StyledMain = styled.main`
 `;
 
 const Main = () => {
-  const { edit } = useSelector((state) => state.board);
-  return <StyledMain>{edit ? <Write /> : <List />}</StyledMain>;
+  const { write } = useSelector((state) => state.board);
+  return <StyledMain>{write ? <Write /> : <List />}</StyledMain>;
 };
 
 export default Main;

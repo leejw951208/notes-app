@@ -13,12 +13,14 @@ const StyledInput = styled.input`
   } */
 `;
 
-const Input = ({ type, placeholder, backGroundColor }) => {
+const Input = ({ type, placeholder, backGroundColor, value, onChange }) => {
   return (
     <StyledInput
       type={type}
       placeholder={placeholder}
       $backGroundColor={backGroundColor}
+      value={value}
+      onChange={onChange}
     />
   );
 };
