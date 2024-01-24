@@ -9,7 +9,7 @@ const ItemSection = styled.section`
   display: flex;
   flex-direction: column;
   gap: 15px;
-  height: 420px;
+  height: 320px;
   overflow-y: overlay;
 `;
 
@@ -36,10 +36,10 @@ const List = () => {
       </ItemSection>
       <ButtonSection>
         <Button
-          backGroundColor={"#2C61F0"}
-          hoverBackGroundColor={"#1448D3"}
-          color={"white"}
-          name={"New Board"}
+          backGroundColor="#2C61F0"
+          hoverBackGroundColor="#1448D3"
+          color="white"
+          name="Create Note"
           onClick={handleAddBoard}
         />
       </ButtonSection>

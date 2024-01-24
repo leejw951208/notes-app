@@ -53,44 +53,31 @@ const Write = () => {
     <>
       <TopButtonSection>
         <Button
-          backGroundColor={"#7B7B7B"}
-          color={"white"}
-          hoverBackGroundColor={"#626262"}
-          name={"< Back"}
+          backGroundColor="#7B7B7B"
+          color="white"
+          hoverBackGroundColor="#626262"
+          name="< Back"
           onClick={handleCancelBoard}
         />
       </TopButtonSection>
       <WriteSection>
         <Div>
-          <Input type="text" placeholder="제목" backGroundColor="#fff" />
+          <Input type="text" placeholder="Note title" backGroundColor="#fff" />
         </Div>
-        <Div2>
-          <Input type="text" placeholder="기간" backGroundColor="#fff" />
-          <Input type="text" placeholder="기간" backGroundColor="#fff" />
-        </Div2>
-        <Div>
-          <Input type="text" placeholder="스킬" backGroundColor="#fff" />
-        </Div>
-        <Div>
-          <Input type="text" placeholder="요약" backGroundColor="#fff" />
-        </Div>
-        <TextArea rows="10" placeholder="설명"></TextArea>
-        <Div>
-          <Input type="text" placeholder="링크" backGroundColor="#fff" />
-        </Div>
+        <TextArea rows="10" placeholder="Enter note text"></TextArea>
       </WriteSection>
       <FooterButtonSection>
         <Button
-          backGroundColor={"#E53B48"}
-          hoverBackGroundColor={"#D31414"}
-          color={"white"}
-          name={"Remove"}
+          backGroundColor="#E53B48"
+          hoverBackGroundColor="#D31414"
+          color="white"
+          name="Remove"
         />
         <Button
-          backGroundColor={"#2C61F0"}
-          hoverBackGroundColor={"#1448D3"}
-          color={"white"}
-          name={"Save"}
+          backGroundColor="#2C61F0"
+          hoverBackGroundColor="#1448D3"
+          color="white"
+          name="Done"
         />
       </FooterButtonSection>
     </>
