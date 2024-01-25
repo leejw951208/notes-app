@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Input from "../common/Input";
-import Selectbox from "../common/Selectbox";
+import Select from "../common/Select";
 import { useDispatch, useSelector } from "react-redux";
 import { searchActions } from "../../store/search-slice";
 
@@ -17,10 +17,14 @@ const Div = styled.div`
 
 const SearchSection = () => {
   const dispatch = useDispatch();
-  const { keyword } = useSelector((state) => state.search);
+  const { keyword, sort } = useSelector((state) => state.search);
 
   const handleKeywordChange = (e) => {
     dispatch(searchActions.setKeyword(e.target.value));
+  };
+
+  const handleSortChange = (e) => {
+    dispatch(searchActions.setSort(e.target.value));
   };
 
   return (
@@ -35,11 +39,11 @@ const SearchSection = () => {
         />
       </Div>
       <Div $flexGrow="1">
-        <Selectbox>
-          <option>Sort by last edited.</option>
-          <option>Sort by recently edited.</option>
-          <option>Sort by alphabetically</option>
-        </Selectbox>
+        <Select onChange={handleSortChange} value={sort}>
+          <option value="modified">Sort by last edited.</option>
+          <option value="created">Sort by recently edited.</option>
+          <option value="alphabet">Sort by alphabetically</option>
+        </Select>
       </Div>
     </Section>
   );

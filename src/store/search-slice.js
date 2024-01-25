@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const searchSlice = createSlice({
   name: "search",
-  initialState: { keyword: "", sort: "" },
+  initialState: { keyword: "", sort: "modified" },
   reducers: {
     setKeyword(state, action) {
       state.keyword = action.payload;

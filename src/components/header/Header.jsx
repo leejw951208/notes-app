@@ -11,7 +11,7 @@ const StyledHeader = styled.header`
 const Header = () => {
   return (
     <StyledHeader>
-      <h1>Notes App (공사중... 🚧)</h1>
+      <h1>Notes App</h1>
       <p>Take notes and never forget.</p>
     </StyledHeader>
   );

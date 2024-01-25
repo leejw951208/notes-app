@@ -29,17 +29,38 @@ const ButtonSection = styled.section`
 const List = () => {
   const dispatch = useDispatch();
   const { notes } = useSelector((state) => state.board);
-  const { keyword } = useSelector((state) => state.search);
+  const { keyword, sort } = useSelector((state) => state.search);
 
   const [searchNotes, setSearchNotes] = useState([...notes]);
 
   useEffect(() => {
     if (keyword) {
-      setSearchNotes(notes.filter((note) => note.title.indexOf(keyword) === 0));
+      setSearchNotes((prev) => {
+        return prev.filter((note) => note.title.indexOf(keyword) === 0);
+      });
     } else {
       setSearchNotes([...notes]);
     }
-  }, [keyword]);
+    if (sort) {
+      if (sort === "modified") {
+        setSearchNotes((prev) => {
+          return prev.sort(
+            (a, b) => new Date(b.modifiedDate) - new Date(a.modifiedDate)
+          );
+        });
+      } else if (sort === "created") {
+        setSearchNotes((prev) => {
+          return prev.sort(
+            (a, b) => new Date(b.createdDate) - new Date(a.createdDate ? -1 : 1)
+          );
+        });
+      } else {
+        setSearchNotes((prev) => {
+          return prev.sort((a, b) => (b.title > a.title ? -1 : 1));
+        });
+      }
+    }
+  }, [keyword, sort]);
 
   const handleAddBoard = () => {
     dispatch(boardActions.setEditId(""));
