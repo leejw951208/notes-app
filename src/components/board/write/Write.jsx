@@ -99,6 +99,10 @@ const Write = () => {
     );
   };
 
+  const handleRemoveNote = () => {
+    dispatch(boardActions.removeNote(inputValue.id));
+  };
+
   return (
     <>
       <TopButtonSection>
@@ -134,6 +138,7 @@ const Write = () => {
             hoverBackGroundColor="#D31414"
             color="white"
             name="Remove"
+            onClick={handleRemoveNote}
           />
         )}
         <Button

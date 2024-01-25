@@ -26,11 +26,15 @@ const boardSlice = createSlice({
     },
     editNote(state, action) {
       const editNote = state.notes.find(
-        (note) => (note.id = action.payload.id)
+        (note) => note.id === action.payload.id
       );
       editNote.title = action.payload.title;
       editNote.content = action.payload.content;
       editNote.modifiedDate = action.payload.modifiedDate;
+      state.write = false;
+    },
+    removeNote(state, action) {
+      state.notes = state.notes.filter((note) => note.id !== action.payload);
       state.write = false;
     },
   },

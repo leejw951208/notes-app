@@ -4,6 +4,7 @@ import Button from "../../common/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { boardActions } from "../../../store/board-slice";
 import SearchSection from "../../search/Search";
+import { useEffect, useState } from "react";
 
 const ItemSection = styled.section`
   display: flex;
@@ -28,6 +29,17 @@ const ButtonSection = styled.section`
 const List = () => {
   const dispatch = useDispatch();
   const { notes } = useSelector((state) => state.board);
+  const { keyword } = useSelector((state) => state.search);
+
+  const [searchNotes, setSearchNotes] = useState([...notes]);
+
+  useEffect(() => {
+    if (keyword) {
+      setSearchNotes(notes.filter((note) => note.title.indexOf(keyword) === 0));
+    } else {
+      setSearchNotes([...notes]);
+    }
+  }, [keyword]);
 
   const handleAddBoard = () => {
     dispatch(boardActions.setEditId(""));
@@ -39,15 +51,13 @@ const List = () => {
     dispatch(boardActions.setWrite(true));
   };
 
-  console.log(notes);
-
   return (
     <>
       <SearchSection />
       <ItemSection>
-        {notes.length === 0 && <p>No result</p>}
-        {notes &&
-          notes.map((note) => (
+        {searchNotes.length === 0 && <p>No result</p>}
+        {searchNotes &&
+          searchNotes.map((note) => (
             <Item
               key={note.id}
               title={note.title}
